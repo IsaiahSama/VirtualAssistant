@@ -1,0 +1,13 @@
+#content {
+  display: flex;
+  justify-content: space-between;
+  height: 95vh;
+}
+
+.buttonSection {
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 25vw;
+}
