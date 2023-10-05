@@ -1,3 +1,5 @@
+const assistant = document.getElementById("assistant");
+
 const convoStarter = () => {};
 const emoSupport = () => {};
 const moodBoost = () => {};
