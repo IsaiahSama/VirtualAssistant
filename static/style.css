@@ -34,3 +34,27 @@
   text-wrap: wrap;
   font-size: 1.6em;
 }
+
+@media only screen and (max-width: 600px) {
+  #assistantSection {
+    position: absolute;
+    height: 70vh;
+    bottom: 0px;
+    width: 100%;
+    border: 1px solid green;
+  }
+
+  #assistantMessage {
+    bottom: 0px;
+    font-size: 1.2em;
+  }
+
+  .buttonSection {
+    height: 30%;
+    width: 45%;
+  }
+
+  .buttonSection button {
+    font-size: 1em !important;
+  }
+}
