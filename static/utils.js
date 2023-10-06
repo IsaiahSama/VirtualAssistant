@@ -5,13 +5,15 @@ const States = {
   Idle: "idle",
   Talking: "talking",
   Roaming: "roaming",
+  Happy: "happy",
 };
 
-const changeState = (newState) => {
+const changeState = (newState, secs = 10) => {
   assistant.className = newState;
+  resetState(secs);
 };
 
-const resetState = (secs = 10) => {
+const resetState = (secs) => {
   setTimeout(() => {
     changeState(States.Idle);
   }, 1000 * secs);
