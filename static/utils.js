@@ -1,6 +1,8 @@
 const assistant = document.getElementById("assistant");
 const assistantMessage = document.getElementById("assistantMessage");
 
+const quotes = [];
+
 const States = {
   Idle: "idle",
   Talking: "talking",
@@ -33,7 +35,21 @@ const sendMessage = (message) => {
 const getJoke = async () => {
   const url = "https://v2.jokeapi.dev/joke/Any?type=single";
 
-  const jokeRes = await fetch(url);
-  let joke = await jokeRes.json();
+  const response = await fetch(url);
+  let joke = await response.json();
   return joke["joke"];
+};
+
+const getQuote = async () => {
+  if (quotes.length == 0) {
+    const url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
+
+    const response = await fetch(url);
+    const json = await response.json();
+
+    for (let obj of json) quotes.push(obj["text"]);
+  }
+
+  let num = Math.floor(Math.random() * quotes.length);
+  return quotes[num];
 };
