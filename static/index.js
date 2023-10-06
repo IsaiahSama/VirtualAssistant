@@ -1,8 +1,10 @@
 const convoStarter = () => {
-  changeState(States.Talking);
+  changeState(States.Vibing);
   getFact().then((fact) => sendMessage(fact));
 };
 const emoSupport = () => {
+  changeState(States.Talking);
+
   getQuote().then((quote) => sendMessage(quote));
 };
 const moodBoost = () => {

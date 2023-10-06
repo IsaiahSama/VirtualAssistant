@@ -14,6 +14,10 @@
   animation: happy 0.5s infinite alternate;
 }
 
+.vibing {
+  animation: vibing 3s infinite alternate;
+}
+
 @keyframes idle {
   from {
     top: 45%;
@@ -92,5 +96,57 @@
   to {
     left: 60%;
     top: 40%;
+  }
+}
+
+@keyframes vibing {
+  from {
+    left: 10%;
+    top: 30%;
+  }
+
+  10% {
+    left: 10%;
+    top: 50%;
+  }
+
+  20% {
+    left: 10%;
+    top: 30%;
+  }
+
+  30% {
+    left: 10%;
+    top: 50%;
+  }
+
+  40% {
+    left: 10%;
+    top: 30%;
+  }
+
+  60% {
+    left: 80%;
+    top: 50%;
+  }
+
+  70% {
+    left: 80%;
+    top: 30%;
+  }
+
+  80% {
+    left: 80%;
+    top: 50%;
+  }
+
+  90% {
+    left: 80%;
+    top: 30%;
+  }
+
+  to {
+    left: 10%;
+    top: 30%;
   }
 }

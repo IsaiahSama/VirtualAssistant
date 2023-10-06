@@ -8,6 +8,7 @@ const States = {
   Talking: "talking",
   Roaming: "roaming",
   Happy: "happy",
+  Vibing: "vibing",
 };
 
 const changeState = (newState, secs = 10) => {
