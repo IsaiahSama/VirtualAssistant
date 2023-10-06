@@ -1,7 +1,7 @@
 const assistant = document.getElementById("assistant");
 const assistantMessage = document.getElementById("assistantMessage");
 
-const states = {
+const States = {
   Idle: "idle",
   Talking: "talking",
   Roaming: "roaming",
@@ -9,6 +9,12 @@ const states = {
 
 const changeState = (newState) => {
   assistant.className = newState;
+};
+
+const resetState = (secs = 10) => {
+  setTimeout(() => {
+    changeState(States.Idle);
+  }, 1000 * secs);
 };
 
 const typeMessage = (char) => {
