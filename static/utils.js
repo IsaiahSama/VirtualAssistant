@@ -17,7 +17,7 @@ const changeState = (newState, secs = 10) => {
 
 const resetState = (secs) => {
   setTimeout(() => {
-    changeState(States.Idle);
+    assistant.className = States.Idle;
   }, 1000 * secs);
 };
 
@@ -52,4 +52,25 @@ const getQuote = async () => {
 
   let num = Math.floor(Math.random() * quotes.length);
   return quotes[num];
+};
+
+const getTask = async () => {
+  const url =
+    "http://www.boredapi.com/api/activity?participants=1&type=education";
+
+  const response = await fetch(url);
+  const json = await response.json();
+
+  return json["activity"];
+};
+
+const getFact = async () => {
+  const url = "https://api.api-ninjas.com/v1/facts?limit=1";
+
+  const response = await fetch(url, {
+    headers: { "X-Api-Key": "2rtV16X47lcfi0ovjOJ17A==AI7fWq68POvmncCe" },
+  });
+  const json = await response.json();
+
+  return json[0]["fact"];
 };
