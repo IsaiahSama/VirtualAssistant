@@ -11,7 +11,7 @@
 }
 
 .happy {
-  animation: idle 0.5s infinite alternate;
+  animation: happy 0.5s infinite alternate;
 }
 
 @keyframes idle {
@@ -60,5 +60,37 @@
   to {
     top: 40%;
     left: 40%;
+  }
+}
+
+@keyframes happy {
+  from {
+    left: 60%;
+    top: 40%;
+  }
+
+  20% {
+    left: 40%;
+    top: 50%;
+  }
+
+  40% {
+    left: 50%;
+    top: 45%;
+  }
+
+  60% {
+    left: 60%;
+    top: 60%;
+  }
+
+  80% {
+    left: 40%;
+    top: 40%;
+  }
+
+  to {
+    left: 60%;
+    top: 40%;
   }
 }

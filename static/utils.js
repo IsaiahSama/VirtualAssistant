@@ -17,7 +17,8 @@ const changeState = (newState, secs = 10) => {
 
 const resetState = (secs) => {
   setTimeout(() => {
-    assistant.className = States.Idle;
+    let num = Math.floor(Math.random() * 2);
+    assistant.className = num == 0 ? States.Idle : States.Roaming;
   }, 1000 * secs);
 };
 

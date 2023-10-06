@@ -1,4 +1,5 @@
 const convoStarter = () => {
+  changeState(States.Talking);
   getFact().then((fact) => sendMessage(fact));
 };
 const emoSupport = () => {
@@ -9,7 +10,7 @@ const moodBoost = () => {
   getJoke().then((joke) => sendMessage(joke));
 };
 const entertainment = () => {
-  changeState(States.Talking);
+  changeState(States.Happy);
   getTask().then((task) => sendMessage(task));
 };
 const feed = () => {
