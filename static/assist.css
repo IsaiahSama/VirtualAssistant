@@ -11,7 +11,7 @@
 }
 
 .happy {
-  animation: happy 0.5s infinite alternate;
+  animation: happy 1.5s infinite alternate;
 }
 
 .vibing {
@@ -20,133 +20,133 @@
 
 @keyframes idle {
   from {
-    top: 45%;
+    top: 25%;
   }
 
   to {
-    top: 55%;
+    top: 35%;
   }
 }
 
 @keyframes roaming {
   from {
     left: 0%;
-    top: 35%;
+    top: 15%;
   }
 
   to {
-    left: 90%;
-    top: 60%;
+    left: 65%;
+    top: 50%;
   }
 }
 
 @keyframes talking {
   from {
-    top: 40%;
+    top: 20%;
     left: 40%;
   }
 
   25% {
-    top: 50%;
+    top: 30%;
     left: 40%;
   }
 
   50% {
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 30%;
   }
 
   75% {
-    top: 40%;
-    left: 50%;
+    top: 20%;
+    left: 30%;
   }
 
   to {
-    top: 40%;
+    top: 20%;
     left: 40%;
   }
 }
 
 @keyframes happy {
   from {
-    left: 60%;
-    top: 40%;
+    left: 40%;
+    top: 20%;
   }
 
   20% {
-    left: 40%;
-    top: 50%;
+    left: 20%;
+    top: 25%;
   }
 
   40% {
-    left: 50%;
-    top: 45%;
+    left: 30%;
+    top: 25%;
   }
 
   60% {
-    left: 60%;
-    top: 60%;
+    left: 40%;
+    top: 30%;
   }
 
   80% {
-    left: 40%;
-    top: 40%;
+    left: 20%;
+    top: 20%;
   }
 
   to {
-    left: 60%;
-    top: 40%;
+    left: 40%;
+    top: 20%;
   }
 }
 
 @keyframes vibing {
   from {
-    left: 10%;
-    top: 30%;
+    left: 5%;
+    top: 10%;
   }
 
   10% {
-    left: 10%;
-    top: 50%;
+    left: 5%;
+    top: 40%;
   }
 
   20% {
-    left: 10%;
-    top: 30%;
+    left: 5%;
+    top: 10%;
   }
 
   30% {
-    left: 10%;
-    top: 50%;
+    left: 5%;
+    top: 40%;
   }
 
   40% {
-    left: 10%;
-    top: 30%;
+    left: 5%;
+    top: 10%;
   }
 
   60% {
-    left: 80%;
-    top: 50%;
+    left: 60%;
+    top: 40%;
   }
 
   70% {
-    left: 80%;
-    top: 30%;
+    left: 60%;
+    top: 10%;
   }
 
   80% {
-    left: 80%;
-    top: 50%;
+    left: 60%;
+    top: 40%;
   }
 
   90% {
-    left: 80%;
-    top: 30%;
+    left: 60%;
+    top: 10%;
   }
 
   to {
     left: 10%;
-    top: 30%;
+    top: 10%;
   }
 }
