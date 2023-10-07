@@ -5,14 +5,10 @@ const assistantMessage = document.getElementById("assistantMessage");
 const typingSound = document.getElementById("typingAudio");
 const bgMusic = document.getElementById("bgMusic");
 
-bgMusic.addEventListener(
-  "ended",
-  () => {
-    bgMusic.currentTime = 0;
-    bgMusic.play();
-  },
-  false
-);
+bgMusic.addEventListener("ended", () => {
+  bgMusic.currentTime = 0;
+  bgMusic.play();
+});
 
 const quotes = [];
 
