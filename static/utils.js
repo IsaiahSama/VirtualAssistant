@@ -103,14 +103,3 @@ const getFact = async () => {
 
   return json[0]["fact"];
 };
-
-const beIdle = () => {
-  if (
-    assistant.className == States.Idle ||
-    assistant.className == States.Roaming
-  ) {
-    sendMessage(prompts[Math.floor(Math.random() * prompts.length)]);
-  }
-};
-
-setInterval(beIdle, 10000);

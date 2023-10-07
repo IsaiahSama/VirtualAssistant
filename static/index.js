@@ -43,3 +43,14 @@ const help = () => {
   if (grabHandling() == false) return false;
   getTask().then((task) => sendMessage(task));
 };
+
+const beIdle = () => {
+  if (
+    assistant.className == States.Idle ||
+    assistant.className == States.Roaming
+  ) {
+    sendMessage(prompts[Math.floor(Math.random() * prompts.length)]);
+  }
+};
+
+setInterval(beIdle, 10000);
