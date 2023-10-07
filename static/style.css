@@ -48,6 +48,10 @@
   font-size: 1.6em;
 }
 
+#mobileAudio {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   #assistantSection {
     position: absolute;
@@ -74,5 +78,9 @@
 
   .buttonSection button {
     font-size: 1em !important;
+  }
+
+  #mobileAudio {
+    display: inline-block;
   }
 }

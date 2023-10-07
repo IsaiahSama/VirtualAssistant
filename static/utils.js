@@ -29,6 +29,11 @@ const prepMusic = () => {
   bgMusic.play();
 };
 
+const playMobileAudio = () => {
+  document.getElementById("mobileAudio").style.display = "none";
+  bgMusic.play();
+};
+
 const toggleMusic = (current, other) => {
   document.getElementById(current).classList.add("hidden");
   document.getElementById(other).classList.remove("hidden");
