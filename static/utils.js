@@ -24,11 +24,6 @@ const States = {
   Vibing: "vibing",
 };
 
-const prepMusic = () => {
-  alert("WAKE UP!");
-  bgMusic.play();
-};
-
 const playMobileAudio = () => {
   document.getElementById("mobileAudio").style.display = "none";
   bgMusic.play();
