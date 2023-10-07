@@ -14,27 +14,32 @@ const convoStarter = () => {
   changeState(States.Vibing);
   getFact().then((fact) => sendMessage(fact));
 };
+
 const emoSupport = () => {
   if (grabHandling() == false) return false;
   changeState(States.Talking);
 
   getQuote().then((quote) => sendMessage(quote));
 };
+
 const moodBoost = () => {
   if (grabHandling() == false) return false;
   changeState(States.Talking);
   getJoke().then((joke) => sendMessage(joke));
 };
+
 const entertainment = () => {
   if (grabHandling() == false) return false;
   changeState(States.Happy);
   getTask().then((task) => sendMessage(task));
 };
+
 const feed = () => {
   if (grabHandling() == false) return false;
   changeState(States.Happy, 5);
   sendMessage("Nom noms");
 };
+
 const help = () => {
   if (grabHandling() == false) return false;
   sendMessage("Press buttons");
