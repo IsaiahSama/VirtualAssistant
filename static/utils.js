@@ -8,8 +8,8 @@ const bgMusic = document.getElementById("bgMusic");
 bgMusic.addEventListener(
   "ended",
   () => {
-    this.currentTime = 0;
-    this.play();
+    bgMusic.currentTime = 0;
+    bgMusic.play();
   },
   false
 );
