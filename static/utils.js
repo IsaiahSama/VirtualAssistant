@@ -1,6 +1,9 @@
 const assistant = document.getElementById("assistant");
 const assistantMessage = document.getElementById("assistantMessage");
 
+// Audios
+const typingSound = document.getElementById("typingAudio");
+
 const quotes = [];
 
 const States = {
@@ -29,9 +32,15 @@ const typeMessage = (char) => {
 
 const sendMessage = (message) => {
   assistantMessage.innerText = "";
+  typingSound.play();
   for (let i in message) {
-    setTimeout(typeMessage, 75 * i, message[i]);
+    setTimeout(typeMessage, 45 * i, message[i]);
   }
+
+  setTimeout(() => {
+    typingSound.pause();
+    typingSound.currentTime = 0;
+  }, 44 * message.length);
 };
 
 const getJoke = async () => {
