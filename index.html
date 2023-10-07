@@ -15,7 +15,25 @@
     />
     <title>VirtualAssistant</title>
   </head>
-  <body>
+  <body onload="prepMusic()">
+    <div id="musicCont">
+      <img
+        src="static/images/unmute.jpeg"
+        alt=""
+        id="unmuteMusic"
+        class="hidden"
+        width="45px"
+        onclick="toggleMusic(this.id, 'muteMusic')"
+      />
+      <img
+        src="static/images/mute.png"
+        alt=""
+        id="muteMusic"
+        width="45px"
+        onclick="toggleMusic(this.id, 'unmuteMusic')"
+      />
+    </div>
+    <center></center>
     <section id="content">
       <section id="leftSide" class="buttonSection">
         <button
@@ -36,7 +54,7 @@
       </section>
       <section id="assistantSection">
         <!-- <div id="assistant" class="idle"></div> -->
-        <img src="static/woman.png" alt="" id="assistant" class="idle" />
+        <img src="static/images/woman.png" alt="" id="assistant" class="idle" />
         <div id="assistantMessage">My thoughts go here</div>
       </section>
       <section id="rightSide" class="buttonSection">
@@ -58,7 +76,8 @@
       </section>
     </section>
 
-    <audio src="static/typing.mp3" id="typingAudio"></audio>
+    <audio src="static/audio/typing.mp3" id="typingAudio"></audio>
+    <audio src="static/audio/bgmusic.mp3" id="bgMusic"></audio>
   </body>
   <script src="static/utils.js"></script>
   <script src="static/index.js"></script>

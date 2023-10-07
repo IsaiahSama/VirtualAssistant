@@ -1,3 +1,16 @@
+#musicCont {
+  display: flex;
+  justify-content: center;
+}
+
+#musicCont img:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 #content {
   display: flex;
   justify-content: space-between;

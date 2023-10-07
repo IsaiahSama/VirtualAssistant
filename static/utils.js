@@ -3,6 +3,16 @@ const assistantMessage = document.getElementById("assistantMessage");
 
 // Audios
 const typingSound = document.getElementById("typingAudio");
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.addEventListener(
+  "ended",
+  () => {
+    this.currentTime = 0;
+    this.play();
+  },
+  false
+);
 
 const quotes = [];
 
@@ -12,6 +22,18 @@ const States = {
   Roaming: "roaming",
   Happy: "happy",
   Vibing: "vibing",
+};
+
+const prepMusic = () => {
+  alert("WAKE UP!");
+  bgMusic.play();
+};
+
+const toggleMusic = (current, other) => {
+  document.getElementById(current).classList.add("hidden");
+  document.getElementById(other).classList.remove("hidden");
+
+  bgMusic.muted = current == "muteMusic";
 };
 
 const changeState = (newState, secs = 10) => {
