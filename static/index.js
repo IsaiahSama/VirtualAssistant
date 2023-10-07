@@ -16,8 +16,8 @@ const entertainment = () => {
   getTask().then((task) => sendMessage(task));
 };
 const feed = () => {
-  alert("NOM NOMS!");
   changeState(States.Happy, 5);
+  sendMessage("Nom noms");
 };
 const help = () => {
   alert("Press buttons");
