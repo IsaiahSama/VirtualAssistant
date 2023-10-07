@@ -31,7 +31,6 @@ const moodBoost = () => {
 const entertainment = () => {
   if (grabHandling() == false) return false;
   changeState(States.Happy);
-  getTask().then((task) => sendMessage(task));
 };
 
 const feed = () => {
@@ -42,5 +41,5 @@ const feed = () => {
 
 const help = () => {
   if (grabHandling() == false) return false;
-  sendMessage("Press buttons");
+  getTask().then((task) => sendMessage(task));
 };
