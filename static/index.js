@@ -11,20 +11,20 @@ const grabHandling = () => {
 
 const convoStarter = () => {
   if (grabHandling() == false) return false;
-  changeState(States.Vibing);
+  changeState(States.Vibing, 8);
   getFact().then((fact) => sendMessage(fact));
 };
 
 const emoSupport = () => {
   if (grabHandling() == false) return false;
-  changeState(States.Talking);
+  changeState(States.Talking, 10);
 
   getEmoQuote().then((quote) => sendMessage(quote));
 };
 
 const moodBoost = () => {
   if (grabHandling() == false) return false;
-  changeState(States.Talking);
+  changeState(States.Talking, 7);
   getJoke().then((joke) => sendMessage(joke));
 };
 
@@ -37,7 +37,7 @@ const entertainment = () => {
 
 const feed = () => {
   if (grabHandling() == false) return false;
-  changeState(States.Happy, 5);
+  changeState(States.Happy, 3);
   sendMessage("Nom noms");
 };
 
