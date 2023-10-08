@@ -19,7 +19,7 @@ const emoSupport = () => {
   if (grabHandling() == false) return false;
   changeState(States.Talking);
 
-  getQuote().then((quote) => sendMessage(quote));
+  getEmoQuote().then((quote) => sendMessage(quote));
 };
 
 const moodBoost = () => {

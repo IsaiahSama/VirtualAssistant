@@ -11,6 +11,13 @@ bgMusic.addEventListener("ended", () => {
 });
 
 const quotes = [];
+const quoteCategories = [
+  "happiness",
+  "success",
+  "love",
+  "inspirational",
+  "future",
+];
 
 const States = {
   Idle: "idle",
@@ -70,6 +77,20 @@ const getJoke = async () => {
   const response = await fetch(url);
   let joke = await response.json();
   return joke["joke"];
+};
+
+const getEmoQuote = async () => {
+  let category =
+    quoteCategories[Math.floor(Math.random() * quoteCategories.length)];
+  const url = `https://api.api-ninjas.com/v1/quotes?category=${category}`;
+
+  const response = await fetch(url, {
+    headers: { "X-Api-Key": "2rtV16X47lcfi0ovjOJ17A==AI7fWq68POvmncCe" },
+  });
+
+  const json = await response.json();
+
+  return json[0]["quote"];
 };
 
 const getQuote = async () => {
