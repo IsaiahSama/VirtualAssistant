@@ -16,7 +16,7 @@
 }
 
 .excited {
-  animation: idle 1s infinite alternate;
+  animation: idle 0.4s infinite alternate;
 }
 
 .vibing {

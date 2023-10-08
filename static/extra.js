@@ -32,6 +32,29 @@ const prompts = [
   "Adventure is out there!",
 ];
 
+const ballResp = [
+  "It is certain.",
+  "It is decidedly so.",
+  "Without a doubt.",
+  "Yes, definitely.",
+  "You may rely on it.",
+  "As I see it, yes.",
+  "Most likely.",
+  "Outlook good.",
+  "Yes.",
+  "Signs point to yes.",
+  "Reply hazy, try again.",
+  "Ask again later.",
+  "Better not tell you now.",
+  "Cannot predict now.",
+  "Concentrate and ask again.",
+  "Don't count on it.",
+  "My reply is no.",
+  "My sources say no.",
+  "Outlook not so good.",
+  "Very doubtful.",
+];
+
 const catchMe = () => {
   const clickGame = (ev) => {
     sendMessage("Aww, you caught me...");
@@ -63,4 +86,20 @@ const numberGuesser = () => {
   sendMessage("I'm Thinking of a number between 1 and 5. Guess!");
 };
 
-const Games = [catchMe, numberGuesser];
+const eightBall = () => {
+  setTimeout(() => {
+    let q = prompt("Ask me a question!");
+    if (q == "") {
+      changeState(States.No, 2);
+      sendMessage("You didn't even tell me anything...");
+    } else {
+      let response = ballResp[Math.floor(Math.random() * ballResp.length)];
+      changeState(States.Excited, 5);
+      sendMessage(response);
+    }
+  }, 2500);
+
+  sendMessage("Oh oh! Let's play a game! Ask me a question!");
+};
+
+const Games = [catchMe, numberGuesser, eightBall];
