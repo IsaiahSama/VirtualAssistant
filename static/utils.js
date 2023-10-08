@@ -19,6 +19,8 @@ const States = {
   Happy: "happy",
   Excited: "excited",
   Vibing: "vibing",
+  Running: "running",
+  No: "no",
 };
 
 const playMobileAudio = () => {

@@ -42,10 +42,25 @@ const catchMe = () => {
   sendMessage("Catch me if you can!");
 
   setTimeout(() => {
-    changeState("running", -1);
-    // assistant.className = "running";
+    changeState(States.Running, -1);
     assistant.addEventListener("click", clickGame);
   }, 2000);
 };
 
-const Games = [catchMe];
+const numberGuesser = () => {
+  setTimeout(() => {
+    let randomNumber = Math.ceil(Math.random() * 5);
+    let resp = parseInt(prompt("Well? What do you think?"), 10);
+    if (randomNumber == resp) {
+      changeState(States.Happy, 5);
+      sendMessage("Yes! You got it!");
+    } else {
+      changeState(States.No, 3);
+      sendMessage("Bzzt. You got it wrong!");
+    }
+  }, 3000);
+
+  sendMessage("I'm Thinking of a number between 1 and 5. Guess!");
+};
+
+const Games = [catchMe, numberGuesser];
