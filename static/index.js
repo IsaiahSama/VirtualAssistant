@@ -30,7 +30,9 @@ const moodBoost = () => {
 
 const entertainment = () => {
   if (grabHandling() == false) return false;
-  changeState(States.Happy);
+  changeState(States.Happy, 2);
+  let game = Games[Math.floor(Math.random() * Games.length)];
+  game();
 };
 
 const feed = () => {

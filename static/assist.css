@@ -1,3 +1,4 @@
+/* States */
 .idle {
   animation: idle 3s infinite alternate;
 }
@@ -152,5 +153,42 @@
   to {
     left: 10%;
     top: 10%;
+  }
+}
+
+/* Non States  */
+.running {
+  animation: runningAnim 5s infinite alternate;
+}
+
+@keyframes runningAnim {
+  from {
+    left: 0%;
+    top: 35%;
+  }
+
+  20% {
+    left: 35%;
+    top: 5%;
+  }
+
+  25% {
+    left: 85%;
+    top: 10%;
+  }
+
+  50% {
+    left: 48%;
+    top: 30%;
+  }
+
+  80% {
+    left: 15%;
+    top: 80%;
+  }
+
+  to {
+    left: 90%;
+    top: 75%;
   }
 }

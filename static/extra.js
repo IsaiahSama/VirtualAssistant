@@ -31,3 +31,21 @@ const prompts = [
   "The universe has a plan for you.",
   "Adventure is out there!",
 ];
+
+const catchMe = () => {
+  const clickGame = (ev) => {
+    sendMessage("Aww, you caught me...");
+    changeState(States.Excited, 3);
+    assistant.removeEventListener("click", clickGame);
+  };
+
+  sendMessage("Catch me if you can!");
+
+  setTimeout(() => {
+    changeState("running", -1);
+    // assistant.className = "running";
+    assistant.addEventListener("click", clickGame);
+  }, 2000);
+};
+
+const Games = [catchMe];
