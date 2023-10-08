@@ -17,6 +17,7 @@ const States = {
   Talking: "talking",
   Roaming: "roaming",
   Happy: "happy",
+  Excited: "excited",
   Vibing: "vibing",
 };
 
@@ -34,7 +35,7 @@ const toggleMusic = (current, other) => {
 
 const changeState = (newState, secs = 10) => {
   assistant.className = newState;
-  resetState(secs);
+  if (secs > 0) resetState(secs);
 };
 
 const resetState = (secs) => {

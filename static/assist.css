@@ -14,6 +14,10 @@
   animation: happy 1.5s infinite alternate;
 }
 
+.excited {
+  animation: idle 1s infinite alternate;
+}
+
 .vibing {
   animation: vibing 3s infinite alternate;
 }
