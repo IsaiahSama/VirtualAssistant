@@ -1,6 +1,8 @@
 const assistant = document.getElementById("assistant");
 const assistantMessage = document.getElementById("assistantMessage");
 
+let isTyping = false;
+
 // Audios
 const typingSound = document.getElementById("typingAudio");
 const bgMusic = document.getElementById("bgMusic");
@@ -59,6 +61,10 @@ const typeMessage = (char) => {
 };
 
 const sendMessage = (message) => {
+  if (isTyping == true) {
+    return false;
+  }
+  isTyping = true;
   assistantMessage.innerText = "";
   typingSound.play();
   for (let i in message) {
@@ -68,6 +74,7 @@ const sendMessage = (message) => {
   setTimeout(() => {
     typingSound.pause();
     typingSound.currentTime = 0;
+    isTyping = false;
   }, 44 * message.length);
 };
 
