@@ -56,3 +56,18 @@ const beIdle = () => {
 };
 
 setInterval(beIdle, 10000);
+
+const getTime = () => {
+  let d = new Date();
+  let hours = d.getHours();
+  let message =
+    hours < 12
+      ? "Good Morning 🌞"
+      : hours < 16
+      ? "Good afternoon 😶‍🌫️"
+      : hours < 20
+      ? "Good evening 😊"
+      : "Good night 😴";
+
+  sendMessage(message);
+};

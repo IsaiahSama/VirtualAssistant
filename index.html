@@ -15,7 +15,7 @@
     />
     <title>VirtualAssistant</title>
   </head>
-  <body>
+  <body onload="getTime()">
     <div id="musicCont">
       <img
         src="static/images/unmute.jpeg"
@@ -62,7 +62,7 @@
       <section id="assistantSection">
         <!-- <div id="assistant" class="idle"></div> -->
         <img src="static/images/woman.png" alt="" id="assistant" class="idle" />
-        <div id="assistantMessage">My thoughts go here</div>
+        <div id="assistantMessage"></div>
       </section>
       <section id="rightSide" class="buttonSection">
         <button
