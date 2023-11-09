@@ -79,7 +79,7 @@ const numberGuesser = () => {
       sendMessage("Yes! You got it!");
     } else {
       changeState(States.No, 3);
-      sendMessage("Bzzt. You got it wrong!");
+      sendMessage("Bzzt. You got it wrong! It was " + randomNumber);
     }
   }, 3000);
 
