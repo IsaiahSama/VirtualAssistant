@@ -134,3 +134,13 @@ const getFact = async () => {
 
   return json[0]["fact"];
 };
+
+const chatWindow = document.getElementById("chatWindow");
+
+const updateMessages = (sender, content) => {
+  let newMessage = document.createElement("div");
+  newMessage.className = sender + "Message message";
+  newMessage.innerHTML = content;
+
+  chatWindow.appendChild(newMessage);
+};

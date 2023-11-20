@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/style.css" />
-    <link rel="stylesheet" href="static/assist.css" />
+    <link rel="stylesheet" href="static/styles/style.css" />
+    <link rel="stylesheet" href="static/styles/assist.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -50,10 +50,25 @@
           Conversation Starter
         </button>
         <button
+          class="optionButton button is-info is-large"
+          onclick="emoSupport()"
+        >
+          Emotional Support
+        </button>
+        <button
           class="optionButton button is-success is-large"
           onclick="moodBoost()"
         >
           Mood Booster
+        </button>
+        <button
+          class="optionButton button is-success is-large"
+          onclick="entertainment()"
+        >
+          Entertainment
+        </button>
+        <button class="optionButton button is-danger is-large" onclick="help()">
+          Information
         </button>
         <button class="optionButton button is-danger is-large" onclick="feed()">
           Feed
@@ -65,27 +80,23 @@
         <div id="assistantMessage"></div>
       </section>
       <section id="rightSide" class="buttonSection">
-        <button
-          class="optionButton button is-info is-large"
-          onclick="emoSupport()"
-        >
-          Emotional Support
-        </button>
-        <button
-          class="optionButton button is-success is-large"
-          onclick="entertainment()"
-        >
-          Entertainment
-        </button>
-        <button class="optionButton button is-danger is-large" onclick="help()">
-          Information
-        </button>
+        <div id="chatWindow">
+          <div class="lisaMessage message">OH I LOVE YOU!!!</div>
+          <div class="userMessage message">OH... I LOVE YOU TOO!</div>
+        </div>
+        <input
+          type="text"
+          name="userInput"
+          id="userInput"
+          onkeypress="handleInput(event)"
+        />
       </section>
     </section>
     <audio src="static/audio/typing.mp3" id="typingAudio"></audio>
     <audio src="static/audio/bgmusic.mp3" id="bgMusic" loop="loop"></audio>
   </body>
-  <script src="static/utils.js"></script>
-  <script src="static/extra.js"></script>
-  <script src="static/index.js"></script>
+  <script src="static/scripts/utils.js"></script>
+  <script src="static/scripts/games.js"></script>
+  <script src="static/scripts/extra.js"></script>
+  <script src="static/scripts/index.js"></script>
 </html>
