@@ -21,7 +21,6 @@
         src="static/images/unmute.jpeg"
         alt=""
         id="unmuteMusic"
-        class="hidden"
         width="45px"
         onclick="toggleMusic(this.id, 'muteMusic')"
       />
@@ -30,15 +29,9 @@
         alt=""
         id="muteMusic"
         width="45px"
+        class="hidden"
         onclick="toggleMusic(this.id, 'unmuteMusic')"
       />
-      <button
-        id="mobileAudio"
-        class="button is-dark"
-        onclick="playMobileAudio()"
-      >
-        Play Audio
-      </button>
     </div>
     <div id="actionCont">
       <img

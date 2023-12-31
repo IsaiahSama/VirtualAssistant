@@ -5,6 +5,7 @@ let isTyping = false;
 
 // Audios
 const typingSound = document.getElementById("typingAudio");
+typingSound.muted = true;
 const bgMusic = document.getElementById("bgMusic");
 
 bgMusic.addEventListener("ended", () => {
@@ -32,19 +33,17 @@ const States = {
   No: "no",
 };
 
-const playMobileAudio = () => {
-  document.getElementById("mobileAudio").style.display = "none";
-  bgMusic.play();
-};
-
-playTyping = true;
-
 const toggleMusic = (current, other) => {
   document.getElementById(current).classList.add("hidden");
   document.getElementById(other).classList.remove("hidden");
-
-  bgMusic.muted = current == "muteMusic";
-  playTyping = current == "muteMusic";
+  if (other == "muteMusic") {
+    bgMusic.currentTime = 0;
+    bgMusic.play();
+    typingSound.muted = false;
+  } else {
+    bgMusic.stop();
+    typingSound.muted = true;
+  }
 };
 
 const changeState = (newState, secs = 10) => {
@@ -69,16 +68,14 @@ const sendMessage = (message) => {
   }
   isTyping = true;
   assistantMessage.innerText = "";
-  if (playTyping) typingSound.play();
+  typingSound.play();
   for (let i in message) {
     setTimeout(typeMessage, 45 * i, message[i]);
   }
 
   setTimeout(() => {
-    if (playTyping) {
-      typingSound.pause();
-      typingSound.currentTime = 0;
-    }
+    typingSound.pause();
+    typingSound.currentTime = 0;
     isTyping = false;
   }, 44 * message.length);
 };
