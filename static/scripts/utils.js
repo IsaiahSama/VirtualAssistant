@@ -136,11 +136,3 @@ const getFact = async () => {
 };
 
 const chatWindow = document.getElementById("chatWindow");
-
-const updateMessages = (sender, content) => {
-  let newMessage = document.createElement("div");
-  newMessage.className = sender + "Message message";
-  newMessage.innerHTML = content;
-
-  chatWindow.appendChild(newMessage);
-};
