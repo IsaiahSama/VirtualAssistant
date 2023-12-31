@@ -41,7 +41,7 @@ const toggleMusic = (current, other) => {
     bgMusic.play();
     typingSound.muted = false;
   } else {
-    bgMusic.stop();
+    bgMusic.pause();
     typingSound.muted = true;
   }
 };
