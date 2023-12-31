@@ -14,7 +14,7 @@
 #content {
   display: flex;
   justify-content: space-between;
-  height: 95vh;
+  height: 90vh;
 }
 
 .buttonSection {
@@ -27,7 +27,7 @@
 
 #assistantSection {
   position: relative;
-  width: 45%;
+  width: 70%;
 }
 
 #assistant {
@@ -80,6 +80,16 @@
 .userMessage {
   margin-left: auto;
   background-color: lightblue !important;
+}
+
+#actionCont {
+  display: flex;
+  justify-content: space-around;
+}
+
+#actionCont > img {
+  width: 60px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

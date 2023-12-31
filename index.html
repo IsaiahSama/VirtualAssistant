@@ -40,40 +40,45 @@
         Play Audio
       </button>
     </div>
-    <center></center>
+    <div id="actionCont">
+      <img
+        src="./static/icons/talking.png"
+        alt="Talk Button"
+        title="Let's chat!"
+        onclick="convoStarter()"
+      />
+      <img
+        src="./static/icons/therapy.png"
+        alt="Support Button"
+        title="Emotional Support!"
+        onclick="emoSupport()"
+      />
+      <img
+        src="./static/icons/joke.png"
+        alt="Joke Button"
+        title="I got a joke for you!"
+        onclick="moodBoost()"
+      />
+      <img
+        src="./static/icons/games.png"
+        alt="Game Button"
+        title="Let's play a game!"
+        onclick="entertainment()"
+      />
+      <img
+        src="./static/icons/help.png"
+        alt="Inform Button"
+        title="Here's something for you to do!"
+        onclick="help()"
+      />
+      <img
+        src="./static/icons/food.png"
+        alt="Food Button"
+        title="Nom noms?"
+        onclick="feed()"
+      />
+    </div>
     <section id="content">
-      <section id="leftSide" class="buttonSection">
-        <button
-          class="optionButton button is-info is-large"
-          onclick="convoStarter()"
-        >
-          Conversation Starter
-        </button>
-        <button
-          class="optionButton button is-info is-large"
-          onclick="emoSupport()"
-        >
-          Emotional Support
-        </button>
-        <button
-          class="optionButton button is-success is-large"
-          onclick="moodBoost()"
-        >
-          Mood Booster
-        </button>
-        <button
-          class="optionButton button is-success is-large"
-          onclick="entertainment()"
-        >
-          Entertainment
-        </button>
-        <button class="optionButton button is-danger is-large" onclick="help()">
-          Information
-        </button>
-        <button class="optionButton button is-danger is-large" onclick="feed()">
-          Feed
-        </button>
-      </section>
       <section id="assistantSection">
         <!-- <div id="assistant" class="idle"></div> -->
         <img src="static/images/woman.png" alt="" id="assistant" class="idle" />
@@ -92,6 +97,11 @@
     </section>
     <audio src="static/audio/typing.mp3" id="typingAudio"></audio>
     <audio src="static/audio/bgmusic.mp3" id="bgMusic" loop="loop"></audio>
+    <a
+      href="https://www.flaticon.com/free-icons/conversation"
+      title="conversation icons"
+      >Conversation icons created by Freepik - Flaticon</a
+    >
   </body>
   <script src="static/scripts/utils.js"></script>
   <script src="static/scripts/games.js"></script>
