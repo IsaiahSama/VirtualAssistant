@@ -157,5 +157,5 @@ const updateMessages = (sender, content) => {
   newMessage.className = sender + "Message message";
   newMessage.innerHTML = content;
 
-  chatWindow.appendChild(newMessage);
+  setTimeout(() => chatWindow.appendChild(newMessage), 500);
 };
