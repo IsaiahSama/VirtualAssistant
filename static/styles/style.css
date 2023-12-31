@@ -71,6 +71,18 @@
   word-wrap: normal;
   padding: 0.5em;
   margin: 0.2em;
+  animation: messageEntry 0.5s ease-in;
+}
+
+@keyframes messageEntry {
+  from {
+    opacity: 10%;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
 
 .lisaMessage {
