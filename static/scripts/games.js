@@ -57,12 +57,13 @@ const ballResp = [
 
 const catchMe = () => {
   const clickGame = (ev) => {
-    sendMessage("Aww, you caught me...");
+    updateMessages("user", "GOTCHA!");
+    sendAndUpdate("Aww, you caught me...");
     changeState(States.Excited, 3);
     assistant.removeEventListener("click", clickGame);
   };
 
-  sendMessage("Catch me if you can!");
+  sendAndUpdate("Catch me if you can!");
 
   setTimeout(() => {
     changeState(States.Running, -1);
@@ -74,32 +75,35 @@ const numberGuesser = () => {
   setTimeout(() => {
     let randomNumber = Math.ceil(Math.random() * 5);
     let resp = parseInt(prompt("Well? What do you think?"), 10);
+    updateMessages("user", resp);
     if (randomNumber == resp) {
       changeState(States.Happy, 5);
-      sendMessage("Yes! You got it!");
+      sendAndUpdate("Yes! You got it!");
     } else {
       changeState(States.No, 3);
-      sendMessage("Bzzt. You got it wrong! It was " + randomNumber);
+      sendAndUpdate("Bzzt. You got it wrong! It was " + randomNumber);
     }
   }, 3000);
 
-  sendMessage("I'm Thinking of a number between 1 and 5. Guess!");
+  sendAndUpdate("I'm Thinking of a number between 1 and 5 (inclusive). Guess!");
 };
 
 const eightBall = () => {
   setTimeout(() => {
     let q = prompt("Ask me a question!");
     if (q == "") {
+      updateMessages("user", "...");
       changeState(States.No, 2);
-      sendMessage("You didn't even tell me anything...");
+      sendAndUpdate("You didn't even tell me anything...");
     } else {
+      updateMessages("user", q);
       let response = ballResp[Math.floor(Math.random() * ballResp.length)];
       changeState(States.Excited, 5);
-      sendMessage(response);
+      sendAndUpdate(response);
     }
   }, 2500);
 
-  sendMessage("Oh oh! Let's play a game! Ask me a question!");
+  sendAndUpdate("Oh oh! Let's play a game! Ask me a question!");
 };
 
 const Games = [catchMe, numberGuesser, eightBall];

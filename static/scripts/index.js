@@ -12,25 +12,28 @@ const grabHandling = () => {
 const convoStarter = () => {
   if (grabHandling() == false) return false;
   changeState(States.Vibing, 8);
-  getFact().then((fact) => updateMessages("lisa", fact));
+  updateMessages("user", "Come, let's talk!");
+  getFact().then((fact) => sendAndUpdate(fact));
 };
 
 const emoSupport = () => {
   if (grabHandling() == false) return false;
   changeState(States.Talking, 10);
-
-  getEmoQuote().then((quote) => sendMessage(quote));
+  updateMessages("user", "Got anything motivating?");
+  getEmoQuote().then((quote) => sendAndUpdate(quote));
 };
 
 const moodBoost = () => {
   if (grabHandling() == false) return false;
   changeState(States.Talking, 7);
-  getJoke().then((joke) => sendMessage(joke));
+  updateMessages("user", "Tell me a joke!");
+  getJoke().then((joke) => sendAndUpdate(joke));
 };
 
 const entertainment = () => {
   if (grabHandling() == false) return false;
   changeState(States.Happy, -1);
+  updateMessages("user", "Let's play a game!");
   let game = Games[Math.floor(Math.random() * Games.length)];
   game();
 };
@@ -38,12 +41,12 @@ const entertainment = () => {
 const feed = () => {
   if (grabHandling() == false) return false;
   changeState(States.Happy, 3);
-  sendMessage("Nom noms");
+  sendAndUpdate("Nom noms");
 };
 
 const help = () => {
   if (grabHandling() == false) return false;
-  getTask().then((task) => sendMessage(task));
+  getTask().then((task) => sendAndUpdate(task));
 };
 
 const beIdle = () => {
@@ -69,5 +72,5 @@ const getTime = () => {
       ? "Good evening 😊"
       : "Good night 😴";
 
-  sendMessage(message);
+  sendAndUpdate(message);
 };

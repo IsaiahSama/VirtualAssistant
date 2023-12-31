@@ -78,6 +78,11 @@ const sendMessage = (message) => {
   }, 44 * message.length);
 };
 
+const sendAndUpdate = (message) => {
+  sendMessage(message);
+  updateMessages("lisa", message);
+};
+
 const getJoke = async () => {
   const url = "https://v2.jokeapi.dev/joke/Any?type=single";
 
