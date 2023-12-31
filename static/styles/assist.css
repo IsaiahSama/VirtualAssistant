@@ -1,14 +1,14 @@
 /* States */
 .idle {
-  animation: idle 3s infinite alternate;
+  animation: idle 2s infinite alternate;
 }
 
 .roaming {
-  animation: roaming 10s infinite alternate;
+  animation: roaming 7s infinite alternate;
 }
 
 .talking {
-  animation: talking 5s infinite ease-in-out;
+  animation: talking 4s infinite ease-in-out;
 }
 
 .happy {
@@ -24,7 +24,7 @@
 }
 
 .running {
-  animation: runningAnim 5s infinite alternate;
+  animation: runningAnim 4s infinite alternate;
 }
 
 .no {
