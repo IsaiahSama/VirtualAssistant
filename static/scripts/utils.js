@@ -37,11 +37,14 @@ const playMobileAudio = () => {
   bgMusic.play();
 };
 
+playTyping = true;
+
 const toggleMusic = (current, other) => {
   document.getElementById(current).classList.add("hidden");
   document.getElementById(other).classList.remove("hidden");
 
   bgMusic.muted = current == "muteMusic";
+  playTyping = current == "muteMusic";
 };
 
 const changeState = (newState, secs = 10) => {
@@ -66,14 +69,16 @@ const sendMessage = (message) => {
   }
   isTyping = true;
   assistantMessage.innerText = "";
-  typingSound.play();
+  if (playTyping) typingSound.play();
   for (let i in message) {
     setTimeout(typeMessage, 45 * i, message[i]);
   }
 
   setTimeout(() => {
-    typingSound.pause();
-    typingSound.currentTime = 0;
+    if (playTyping) {
+      typingSound.pause();
+      typingSound.currentTime = 0;
+    }
     isTyping = false;
   }, 44 * message.length);
 };
