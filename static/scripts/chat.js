@@ -1,18 +1,20 @@
 const inputField = document.getElementById("userInput");
 
 const utterances = [
-  [/.+how.+you.+/],
+  [/how.*you.*/],
   [
-    "hi",
-    "hey",
-    "hello",
-    /good (morning|day|night|evening|afternoon)/,
-    "Hiya",
-    "Hola",
-    "Greetings",
+    /hi.*/,
+    /hey.*/,
+    /hello.*/,
+    /good (morning|day|night|evening|afternoon).*/,
+    /Hiya.*/,
+    /Hola.*/,
+    /Greetings.*/,
   ],
   [/what (is|are).+/],
   [/(i am|i'm).+/],
+  [/yes.*/],
+  ["boop"],
 ];
 const responses = [
   [
@@ -65,6 +67,22 @@ const responses = [
     "I am excited to know more about the amazing person behind the screen! 🚀",
     "Well, that's cool and all, but did you know I am watching you? 👁️👁️",
   ],
+  [
+    "I like your enthusiasm 🫡",
+    "Yes! 😊",
+    "Absolutely! 🌟",
+    "You got it! 👍",
+    "Affirmative! 🚀",
+    "Indeed! 😎",
+    "Sure thing! 🌈",
+    "Absolutely positively yes! 🌟",
+    "Without a doubt! 💯",
+    "Yup! 😄",
+    "Of course! 🌼",
+    "Yep! 🎉",
+    "Certainly! 🤗",
+  ],
+  ["beep"],
 ];
 const extra = [
   "Go on, I'm listening~ 👂",
@@ -88,24 +106,56 @@ const extra = [
   "Oh look! Buttons on the side, I wonder what they do! 👀",
 ];
 
-const handleInput = (e) => {
-  if (e.keyCode === 13) {
-    updateMessages("user", inputField.value);
-    inputField.value = "";
-  }
-};
-
-const updateMessages = (sender, content) => {
-  let newMessage = document.createElement("div");
-  let text = content.toLowerCase().replace(/[^\w\s\d]/gi, "");
+const lisaResponse = (text) => {
+  text = text.toLowerCase().replace(/[^\w\s\d]/gi, "");
   text = text
     .replace(/ a /g, " ")
     .replace(/whats/g, "what is")
     .replace(/please /g, "")
     .replace(/ please/g, "");
 
+  matches = [];
+
+  for (let i = 0; i < utterances.length; i++) {
+    for (let expr of utterances[i]) {
+      if (text.match(expr) != null) {
+        matches.push(
+          responses[i][Math.floor(Math.random() * responses[i].length)]
+        );
+        break;
+      }
+    }
+  }
+
+  extraResponse = Math.floor(Math.random() * 100);
+  if (matches.length > 0)
+    updateMessages("lisa", matches[Math.floor(Math.random() * matches.length)]);
+  if (extraResponse > 70 || matches.length == 0) {
+    updateMessages("lisa", extra[Math.floor(Math.random() * extra.length)]);
+  }
+  console.log(matches);
+};
+
+const handleInput = (e) => {
+  if (e.keyCode === 13) {
+    let input = inputField.value;
+    updateMessages("user", input);
+    setTimeout(() => {
+      lisaResponse(input);
+    }, 1000);
+    inputField.value = "";
+    inputField.disabled = true;
+    setTimeout(() => {
+      inputField.disabled = false;
+    }, 3000);
+  }
+};
+
+const updateMessages = (sender, content) => {
+  let newMessage = document.createElement("div");
+
   newMessage.className = sender + "Message message";
-  newMessage.innerHTML = text;
+  newMessage.innerHTML = content;
 
   chatWindow.appendChild(newMessage);
 };
