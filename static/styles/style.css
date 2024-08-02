@@ -139,6 +139,7 @@
 
   .chatSection > input {
     margin-top: 0.5em;
+    height: 20%;
   }
 
   #mobileAudio {
